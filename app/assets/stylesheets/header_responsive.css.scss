@@ -371,12 +371,12 @@ a.app-name{
     display: block;
     content: '';
     position: absolute;
-    height: 5px;
+    height: 4px;
     width: 22px;
     border-top: 2px solid #bbb;
     border-bottom: 2px solid #bbb;
     right: 25px;
-    top: 20px;
+    top: 18px;
   }
 
   p.header-username{
@@ -422,7 +422,7 @@ a.app-name{
     width: 22px;
     border-top: 2px solid #bbb;
     right: 25px;
-    top: 34px;
+    top: 30px;
   }
   #cssmenu > ul > li.has-sub > a::after,
   #cssmenu ul ul li.has-sub > a::after {
