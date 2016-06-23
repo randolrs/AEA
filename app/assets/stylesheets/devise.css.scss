@@ -1,0 +1,102 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-container{
+	max-width: 500px;
+	height:500px;
+	border-radius: 500px;
+	margin:0 auto;
+
+	background: radial-gradient(circle at 100px 0px, #BA5EC7, #222);
+}
+
+.login-stage{
+	width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  padding: 10px;
+}
+
+.login-shadow{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.0) 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-150px);
+    -moz-transform: rotateX(90deg) translateZ(-150px);
+    -ms-transform: rotateX(90deg) translateZ(-150px);
+    -o-transform: rotateX(90deg) translateZ(-150px);
+    transform: rotateX(90deg) translateZ(-150px);
+    z-index: -1;
+   	top: 100px;
+}
+
+
+.login-panel{
+	text-align:center;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color:white;
+
+    h2{
+    	margin:10px 0px;
+    	text-shadow: 0px 2px 5px #111;
+    	font-size:60px;
+    	font-weight:400;
+    }
+}
+
+.login-field{
+	border:none;
+	margin-top:20px;
+	padding:5px;
+	border-radius:3px;
+	width:70%;
+	font-size: 18px;
+    text-align: center;
+    box-shadow: 0px 2px 4px #444;
+
+}
+
+.login-submit{
+	background: #2BD6A6;
+	background: #25BA90;
+	color: #fff;
+	margin-top: 20px;
+	width:200px;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    font-size: 18px;
+    text-shadow: 0px 1px 1px #444;
+    border:none;
+
+	webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
+	background-color: #2BD6A6;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2BD6A6), to(#25BA90));
+	background-image: -webkit-linear-gradient(top, #2BD6A6, #25BA90);
+	background-image: -moz-linear-gradient(top, #2BD6A6, #25BA90);
+	background-image: -ms-linear-gradient(top, #2BD6A6, #25BA90);
+	background-image: -o-linear-gradient(top, #2BD6A6, #25BA90);
+	background-image: linear-gradient(top, #2BD6A6, #25BA90);
+
+	box-shadow: inset 0px 1px 3px 0px #fff;
+}
+
+.login-submit:hover{
+	cursor:pointer;
+	background-color: #fff;
+	background-image: #fff;
+	background:#fff;
+	text-shadow: 0px 1px 1px #fff;
+	color: #2BD6A6;
+	}
+
+
