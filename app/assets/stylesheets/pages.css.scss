@@ -1,0 +1,102 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-container-float-offset{
+	float:left;
+	left:-50%;
+	width:100%;
+	height:100%;
+
+}
+
+.content-container-float{
+	width:100%;
+	height:100%;
+	max-width:900px;
+	margin: 0 auto;
+
+}
+
+.content-left{
+	float:left;
+	width:20%;
+	min-height:100%;
+	
+}
+
+.content-center{
+	float:left;
+	padding:0px 30px;
+	width:59%;
+	min-height:100%;
+	
+}
+
+.content-right{
+	float:left;
+	width:20%;
+	min-height:100%;
+	clear:both;
+	
+}
+
+.content-column-header{
+	border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 1px #eee;
+    padding-bottom:10px;
+    color: #6128A1;
+    text-shadow: 0px 1px #eee;
+}
+
+ul.favorite-topics-list{
+	padding:0px;
+	list-style: none;
+	
+	li {
+		font-size:16px;
+		padding-bottom:10px;
+	}
+
+	li:hover {
+		cursor:pointer;
+		background-color: #fefefe;
+	}
+}
+
+.question-summary-index-container{
+	padding:3px 8px;
+	width:100%;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 1px #eee;
+	p{
+		font-size:24px;
+		font-weight: 600;
+		text-align: justify;
+		text-shadow: 0px 1px #ddd;
+		color: #333;
+	}
+
+	p:hover{
+		cursor:pointer;
+	}
+}
+
+ul.improve-feed-list{
+	padding:0px;
+	padding-left:25px;
+	list-style: none;
+	
+	li {
+		font-size:16px;
+		padding-bottom:10px;
+		list-style-type:lower-roman;
+	}
+
+	li:hover {
+		cursor:pointer;
+		background-color: #fefefe;
+	}
+	
+}
