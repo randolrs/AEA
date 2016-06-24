@@ -43,3 +43,8 @@ textarea:focus, input:focus{
  .main-content{
  	padding: 80px 32px 0px;
  }
+
+ 
+.default-off{
+	display:none;
+}

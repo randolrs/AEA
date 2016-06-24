@@ -24,6 +24,12 @@
 
         <%= f.text_area :body, placeholder: "Ask a Question", :rows => "2", autofocus: false, class: "question-text" %>
 
+        <div class="question-ask-submit-container">
+
+        	<%= f.submit "Ask", class: "question-ask-submit default-off", id: "question-ask-submit" %>
+
+        </div>
+
 	<% end %>
 
 </div>

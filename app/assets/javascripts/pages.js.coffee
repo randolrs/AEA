@@ -20,3 +20,14 @@ $(document).ready ->
 		$('form').on 'click', '#question-binary-option-female', (event) ->
 			radio_button_female = $(@).parent().parent().nextAll('#gender-radio-button-female')
 			radio_button_female.prop("checked", true)
+
+		$('form').on 'focusin', '#question_body', (event), ->
+			question_ask_submit = $(@).parent().find('#question-ask-submit')
+			question_ask_submit.show()
+
+		$('form').on 'focusout', '#question_body', (event), ->
+			questionText = $(@).val()
+			if questionText.length == 0
+				question_ask_submit = $(@).parent().find('#question-ask-submit')
+				question_ask_submit.slideUp()
+			end
