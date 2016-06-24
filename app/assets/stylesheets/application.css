@@ -42,9 +42,15 @@ textarea:focus, input:focus{
 
  .main-content{
  	padding: 80px 32px 0px;
+ 	float: left;
+    width: 100%;
  }
 
- 
+
 .default-off{
 	display:none;
+}
+
+a:hover{
+	background-color: transparent;
 }
