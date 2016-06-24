@@ -2,7 +2,7 @@
 
 	<% if current_user.basic_profile %>
 
-
+		<%= render partial: 'pages/home_user_dashboard', locals: {source: @source} %>
 
 	<%else%>
 

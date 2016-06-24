@@ -35,9 +35,16 @@
 
 		   <li><a href='<%=root_path%>' class="app-name"><span><p class="header-app-name">AEA</p><p class="header-home">Home</p></span></a></li>
 
-		   <li class="right"><a href='<%=new_user_session_path%>'><span><p class="header-login">Login</p><!-- <p class="header-home">Login</p> --></span></a></li>
+		   <% if user_signed_in? %>
+		   		<li class="right"><span><p class="header-logout"><%= link_to "Logout", destroy_user_session_path, class: "header-logout", method: :delete %></p><!-- <p class="header-home">Login</p> --></span></li>
 
-		   <li class="right"><a href='<%=new_user_registration_path%>'><span><p class="header-signup">Join</p><!-- <p class="header-home">Signup</p> --></span></a></li>
+		   <%else%>
+
+			   <li class="right"><a href='<%=new_user_session_path%>'><span><p class="header-login">Login</p><!-- <p class="header-home">Login</p> --></span></a></li>
+
+			   <li class="right"><a href='<%=new_user_registration_path%>'><span><p class="header-signup">Join</p><!-- <p class="header-home">Signup</p> --></span></a></li>
+
+		   <%end%>
 
 		</ul>
 

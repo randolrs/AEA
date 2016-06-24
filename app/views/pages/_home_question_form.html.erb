@@ -1,0 +1,29 @@
+<div class="home-question-form">
+
+	<%= form_for(@question, :html => { :class => "message-form"}) do |f| %>
+
+        <% if @question.errors.any? %>
+
+        	<div id="error_explanation">
+
+	            <h2><%= pluralize(@question.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+	            <ul>
+
+		            <% @question.errors.full_messages.each do |message| %>
+		              
+		              <li><%= message %></li>
+
+		            <% end %>
+
+	            </ul>
+
+	        </div>
+
+        <% end %>
+
+        <%= f.text_area :body, placeholder: "Ask a Question", :rows => "2", autofocus: false, class: "question-text" %>
+
+	<% end %>
+
+</div>

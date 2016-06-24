@@ -35,6 +35,10 @@ body{
 
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 
  .main-content{
  	padding: 80px 32px 0px;

@@ -4,20 +4,28 @@
 
 		<h2>About You</h2>
 
-		<form>
+		<%= form_tag update_basic_profile_path do %>
 
-			<div class="question-option-line"><span><a class="question-binary-option active left">Male</a><a class="question-binary-option right">Female</a></span></div>
+		<%# form_for(@user, :url => user_basic_profile_path) do |f| %>
+
+			<div class="question-option-line"><span><a id="question-binary-option-male" class="question-binary-option active left">Male</a><a id="question-binary-option-female" class="question-binary-option right inactive">Female</a></span></div>
+
+			<input id="gender-radio-button-male" type="radio" name="gender" value="male" checked class="hidden-input">
+			<input type="radio" name="gender" value="female" class="hidden-input" id="gender-radio-button-female">
 
 			<br>
 
-			<input type="text" name="birth_year" class="question-text-field" autofocus placeholder="Birth Year">
+			<input type="text" class="question-text-field" autofocus name="birth_year" placeholder="Birth Year">
+			
+			<%# f.text_field :birth_year, class: "question-text-field", :autofocus => true, placeholder: "Birth Year" %>
 
 			<div class="question-option-line">
-				<input type="submit" value="Continue" class="login-submit large">
+				 <%# f.submit "Continue", class: "login-submit large" %>
+				 <input type="submit" value="Continue" class="login-submit large">
 			</div>
 
 
-		</form>
+		<% end %>
 
 	</div>
 </div>
