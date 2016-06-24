@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :answers
+
   resources :questions
 
   devise_for :users, :path_names => { :sign_up => "join", :sign_in => "login"}
