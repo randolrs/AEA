@@ -1,6 +1,6 @@
-<div class="home-question-form">
+<div class="home-question-container">
 
-	<%= form_for(@question, :html => { :class => "message-form"}) do |f| %>
+	<%= form_for(@question, :html => { :class => "home-question-form"}) do |f| %>
 
         <% if @question.errors.any? %>
 
