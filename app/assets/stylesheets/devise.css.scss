@@ -85,7 +85,6 @@
     padding: 10px;
     font-size: 18px;
     text-shadow: 0px 1px 1px #444;
-    border:none;
 
 	webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
@@ -109,5 +108,11 @@
 	text-shadow: 0px 1px 1px #fff;
 	color: #2BD6A6;
 	}
+
+.login-submit.large{
+	padding:10px 30px;
+    font-size: 30px;
+
+}
 
 

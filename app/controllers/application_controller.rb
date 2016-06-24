@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   	if @need_login
   		before_action :authenticate_user!
 	end
+
+	def login
+		@hide_menu = true
+	end
+
 end

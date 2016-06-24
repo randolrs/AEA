@@ -1,48 +1,17 @@
-<!-- <div class ="content-container-float-offset"> -->
+<% if user_signed_in? %>
 
-	<div class ="content-container-float">
+	<% if current_user.basic_profile %>
 
-		<div class="content-left">
-			<p class="content-column-header">Favorite Topics</p>
-			<ul class="favorite-topics-list">
-				<li>Fire</li>
-				<li>Water</li>
-				<li>Earth</li>
-				<li>Wind</li>
-			</ul>
-		</div>
 
-		<div class="content-center">
-			<p class="content-column-header">Top Stories for You</p>
-			
-			<div class="question-summary-index-container">
-				<p>Do You Favor the Brexit?</p>
-			</div>
 
-			<div class="question-summary-index-container">
-				<p>Where is the best place to get pizza in Montreal?</p>
-			</div>
+	<%else%>
 
-			<div class="question-summary-index-container">
-				<p>How do you feel about Turkey?</p>
-			</div>
+		<%= render partial: 'pages/home_user_no_profile', locals: {source: @source} %>
 
-			<div class="question-summary-index-container">
-				<p>Do you own bitcoin?</p>
-			</div>
+	<%end%>
 
-		</div>
+<% else %>
 
-		<div class="content-right">
-			<p class="content-column-header">Improve Your Feed</p>
-			<ul class="improve-feed-list">
-				<li>Update Age</li>
-				<li>Gender</li>
-				<li>Country</li>
-				<li>Rich?</li>
-			</ul>
-		</div>
+	<%= render partial: 'pages/home_no_user', locals: {source: @source} %>
 
-	</div>
-
-<!-- </div> -->
+<% end %>

@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<%= render 'layouts/header_responsive' %>
+<% unless @hide_menu %>
+
+	<%= render 'layouts/header_responsive' %>
+	
+<%end%>
 
 <div class="main-content">
 	<%= yield %>
