@@ -31,7 +31,12 @@ $(document).ready ->
 				question_ask_submit = $(@).parent().find('#question-ask-submit')
 				question_ask_submit.hide()
 			end
-  
+
+		$('form').on 'click', '#question-ask-submit', (event) ->
+			filterPage = $(@).parent().parent().find('.question-audience-filter')
+			filterPage.show()
+			event.preventDefault()
+
 		$('form').on 'click', '.remove_fields', (event) ->
 			$(this).prev('input[type=hidden]').val('1')
 			$(this).closest('fieldset').hide()

@@ -37,12 +37,13 @@
 		</div>
 
 		<div class="content-right">
-			<p class="content-column-header">Improve Your Feed</p>
-			<ul class="improve-feed-list">
-				<li>Update Age</li>
-				<li>Gender</li>
-				<li>Country</li>
-				<li>Rich?</li>
+			<p class="content-column-header">My Questions</p>
+			<ul class="my-questions-list">
+				<% current_user.questions.each do |question| %>
+
+					<li><%= question.body%></li>
+
+				<%end%>
 			</ul>
 		</div>
 

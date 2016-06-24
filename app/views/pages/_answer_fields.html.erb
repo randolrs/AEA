@@ -1,1 +1,5 @@
-hell
+<div class="question-answer-field">
+	<%= f.text_field :body %>
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "remove", '#', class: "remove_fields" %>
+</div>

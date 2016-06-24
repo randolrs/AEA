@@ -24,10 +24,18 @@
 
         <%# link_to_add_fields "+ Add Forecast", f, :earnings_predictions %><%= f.text_area :body, placeholder: "Ask a Question", :rows => "2", autofocus: false, class: "question-text" %>
 
+        <%= f.hidden_field :user_id, as: :integer, :label => false, :placeholder => current_user.id %>
+
         <div class="question-ask-submit-container">
 
-        	<%= link_to_add_fields "+ Add Forecast", f, :answers %>
+        	<%= link_to_add_fields "+ Add Answers", f, :answers %>
         	<%= f.submit "Ask", class: "question-ask-submit default-off", id: "question-ask-submit" %>
+
+        </div>
+
+        <div class="question-audience-filter">
+
+        	<h2>Question Text Here</h2>
 
         </div>
 

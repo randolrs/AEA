@@ -94,16 +94,16 @@ ul.favorite-topics-list{
 	}
 }
 
-ul.improve-feed-list{
+ul.my-questions-list{
 	padding:0px;
-	padding-left:25px;
 	list-style: none;
 	float: left;
+	width:100%;
 	
 	li {
 		font-size:16px;
 		padding-bottom:10px;
-		list-style-type:lower-roman;
+		list-style-type:none;
 	}
 
 	li:hover {
@@ -354,4 +354,29 @@ a.add_fields:hover, a.edit-forecast:hover{
 
 a.add_fields:focus, a.edit-forecast:focus {
   text-decoration:none;
+}
+
+.question-answer-field{
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+
+.question-audience-filter{
+
+	height:100%;
+	width:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:900000;
+	background: green;
+	display:none;
+	padding: 100px 50px;
+
+	h2{
+		color: white;
+		width:100%;
+		text-align:center;
+	}
 }
