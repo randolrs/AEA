@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post 'update_basic_profile' => 'pages#update_basic_profile'
 
+  get 'questions/:id/' => 'questions#show', as: 'question_show'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

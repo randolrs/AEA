@@ -129,10 +129,12 @@ ul.my-questions-list{
     transform: rotate(45deg);
     position: absolute;
     right: 40px;
+    top: -40px;
     font-size:40px;
-    font-weight:700px;
+    font-weight:700;
     color:#666;
     margin-top:30px;
+    text-shadow: 0px 2px 1px #ccc;
 }
 
 .dismiss-question-show:hover{

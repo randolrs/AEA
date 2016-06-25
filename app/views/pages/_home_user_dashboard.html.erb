@@ -41,7 +41,7 @@
 			<ul class="my-questions-list">
 				<% current_user.questions.each do |question| %>
 
-					<li><%= question.body%></li>
+					<li><a href="<%= question_show_path(question.id) %>"><%= question.body%></a></li>
 
 				<%end%>
 			</ul>

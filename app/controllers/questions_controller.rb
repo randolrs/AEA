@@ -10,6 +10,14 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    if params[:id]
+
+      @question = Question.find(params[:id])
+      redirect_to root_path(:question_id => @question.id) 
+    else
+
+      redirect_to root_path(:notice => "Cannot find question!") 
+    end
   end
 
   # GET /questions/new
