@@ -16,37 +16,63 @@
 
 			<%= render 'pages/home_question_form'%>
 
-			<p class="content-column-header">Top Stories for You</p>
-			
-			<div class="question-summary-index-container">
-				<p>Do You Favor the Brexit?</p>
-			</div>
-
-			<div class="question-summary-index-container">
-				<p>Where is the best place to get pizza in Montreal?</p>
-			</div>
-
-			<div class="question-summary-index-container">
-				<p>How do you feel about Turkey?</p>
-			</div>
-
-			<div class="question-summary-index-container">
-				<p>Do you own bitcoin?</p>
-			</div>
-
-		</div>
-
-		<div class="content-right">
 			<p class="content-column-header">My Questions</p>
 			<ul class="my-questions-list">
 				<% current_user.questions.each do |question| %>
 
-					<li><a class="question-show-link" id="<%=question.id%>"><%= question.body%></a></li>
+					<li>
+						<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
+						<br>
+						<a class="question-show-link-date">Oct 23, 2013</a>
+
+					</li>
 
 				<%end%>
 
 				<li><a class="question-show-link" id="90">Test for error</a></li>
 			</ul>
+
+
+		</div>
+
+		<div class="content-right">
+
+			<p class="content-column-header">Top Stories for You</p>
+			
+			<ul class="my-questions-list">
+				<%# current_user.questions.each do |question| %>
+
+<!-- 					<li>
+						<a class="question-show-link" id="<%#question.id%>"><%# question.body%></a>
+						<br>
+						<a class="question-show-link-date">Oct 23, 2013</a>
+
+					</li> -->
+
+				<%#end%>
+
+				<li>
+					<a class="question-show-link" id="90">Do You Favor Brexit?</a>
+					<br>
+					<a class="question-show-link-date">Oct 23, 2013</a>
+				</li>
+				<li>
+					<a class="question-show-link" id="90">Where is the best place to get pizza in Montreal?</a>
+					<br>
+					<a class="question-show-link-date">Oct 23, 2013</a>
+				</li>
+				<li>
+					<a class="question-show-link" id="90">How do you feel about Turkey?</a>
+					<br>
+					<a class="question-show-link-date">Oct 23, 2013</a>
+				</li>
+				<li>
+					<a class="question-show-link" id="90">Do you own bitcoin?</a>
+					<br>
+					<a class="question-show-link-date">Oct 23, 2013</a>
+				</li>
+			</ul>
+
 		</div>
 
 	</div>
