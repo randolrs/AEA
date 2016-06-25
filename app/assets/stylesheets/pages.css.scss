@@ -140,6 +140,7 @@ ul.my-questions-list{
 	width:100%;
 	margin-top:15px;
 	line-height: 3;
+	text-align: center;
 }
 
 .question-submit{
@@ -370,13 +371,35 @@ a.add_fields:focus, a.edit-forecast:focus {
 	top:0px;
 	left:0px;
 	z-index:900000;
-	background: green;
+	background: #4DD990;
 	display:none;
-	padding: 100px 50px;
+	padding-top: 100px;
 
 	h2{
 		color: white;
 		width:100%;
 		text-align:center;
+		font-weight:400;
+		font-size: 48px;
+		text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+		font-style: italic;
+		margin-bottom: 60px;
 	}
+
+	h3{
+		color: white;
+		width:100%;
+		text-align:center;
+		font-weight:400;
+		font-size: 32px;
+		text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.question-audience-filter-outline{
+	margin: 0 auto;
+	border: 2px solid #fff;
+	padding:20px;
+	max-width: 500px;
+    width: 100%;
 }
