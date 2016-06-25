@@ -1,6 +1,10 @@
 
 <div class="question-audience-filter">
 
+	<a class="dismiss-question-show">
+		+
+	</a>
+
 	<%= form_for(@question, :html => { :class => "home-question-form"}) do |f| %>
 
         <% if @question.errors.any? %>

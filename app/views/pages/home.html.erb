@@ -16,6 +16,8 @@
 
 <% end %>
 
+<%= render partial: 'questions/return_question_details' %>
+
 <% if @question_show %>
 
 	<%= render partial: 'pages/question_show', locals:{source: @source, show_question: @question_show} %>

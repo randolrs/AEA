@@ -53,7 +53,7 @@ $(document).ready ->
 
 		$("#question-ask-submit").click (event), ->
 			filterPage = $(@).parent().find('.question-audience-filter')
-			filterPage.show()
+			filterPage.slideDown()
 			event.preventDefault()
 
 		$('form').on 'click', '.remove_fields', (event) ->
@@ -67,3 +67,26 @@ $(document).ready ->
 			$(this).before($(this).data('fields').replace(regexp, time))
 			event.preventDefault()
 
+		$(".question-show-link").click (event), ->
+			returnQuestionDetails = $(@).parent().parent().parent().parent().parent().parent().find('.return-question-details')
+			questionID = $(@).attr('id')
+			alert(questionID)
+			$.ajax
+				url: "/questions/details/#{questionID}"
+				type: "GET"
+				success: (data) ->
+					console.log(data)
+					notice = data.notice
+					if notice.length > 0
+						alert(notice)
+					else
+						questionBody = data.body
+						alert(questionBody)
+						questionHeader = returnQuestionDetails.find('.return-question-details-header')
+						questionHeader.text(questionBody)
+						returnQuestionDetails.slideDown()
+						numberOfAnswers = data.answer_count
+						answer_1_count = data.answer_1_count
+						answer_2_count = data.answer_2_count
+						answer_3_count = data.answer_3_count
+						answer_4_count = data.answer_4_count

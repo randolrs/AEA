@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'questions/:id/' => 'questions#show', as: 'question_show'
 
+  get '/questions/details/:question_id', :to => 'questions#return_details'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

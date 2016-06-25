@@ -61,6 +61,55 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def return_details
+
+
+    if params[:question_id]
+
+      if Question.exists?(id: params[:question_id])
+
+        @question = Question.find(params[:question_id])
+        body = @question.body
+        answer_count = @question.answers.count
+
+        notice = ""
+        i = 0
+
+        answer_array = Array.new
+
+        until i = @question.body do
+          answer_array << @question.answer[i+1] 
+          i = i + 1
+        end
+
+        # data.answer_1_count
+        # data.answer_2_count
+        # data.answer_3_count
+        # data.answer_4_count
+
+        respond_to do |format|
+              format.js { render json: { :body => @question.body, :notice=> notice  } , content_type: 'text/json' }
+        end
+
+      else
+
+        respond_to do |format|
+            format.js { render json: { :notice => "Question Not Found" } , content_type: 'text/json' }
+        end
+
+      end
+
+    else
+
+      respond_to do |format|
+            format.js { render json: { :alert => "Question Not Found" } , content_type: 'text/json' }
+      end
+
+    end
+
+
+  end
+
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
