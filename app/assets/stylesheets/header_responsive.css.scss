@@ -93,8 +93,8 @@
 }
 
 #cssmenu > ul > li > a.app-name {
-  padding: 12px 25px 12px 25px;
-  text-shadow: 0px 2px #eee;
+  text-shadow: 0px 1px 0px #666;
+  padding: 12px 40px 12px 40px;
 
 }
 
@@ -122,7 +122,8 @@ p.header-app-name{
   margin:0px;
   display:inline;
   font-weight: 700;
-  font-size: 21px;
+  font-size: 28px;
+  color: rgba(77, 217, 144, 0.9);
 }
 
 p.header-login{
@@ -168,7 +169,7 @@ p.header-signup{
 }
 
 p.header-logout{
-	padding: 3px 12px;
+	padding: 3px 40px;
 }
 
 a.header-logout{
@@ -186,9 +187,6 @@ a.header-logout{
 	color: #999;
 }
 
-a.app-name{
-  padding: 12px 10px 12px 10px;
-}
 
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover,

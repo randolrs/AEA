@@ -53,6 +53,9 @@ $(document).ready ->
 
 		$("#question-ask-submit").click (event), ->
 			filterPage = $(@).parent().find('.question-audience-filter')
+			inputQuestion = $(@).parent().find('input.question-text')
+			filterPageHeader = filterPage.find('textarea.question-text')
+			filterPageHeader.text(inputQuestion.val())
 			filterPage.slideDown()
 			event.preventDefault()
 
