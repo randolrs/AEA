@@ -1,17 +1,77 @@
 
 <div class="question-audience-filter">
 
-	<h2>Question Text Here</h2>
-	<h3>Select Audience</h3>
+	<%= form_for(@question, :html => { :class => "home-question-form"}) do |f| %>
 
-	<div class="question-audience-filter-outline">
+        <% if @question.errors.any? %>
 
-		<div class="question-option-line"><span><a id="question-binary-option-male" class="question-binary-option active left">Male</a><a id="question-binary-option-female" class="question-binary-option right inactive">Female</a></span></div>
+        	<div id="error_explanation">
 
-		<div class="question-option-line"><span><a>Between Age</a><input type="text" name="lname"><a>and</a><input type="text" name="lname"></span></div>
+	            <h2><%= pluralize(@question.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-		<%# f.submit "Ask", class: "question-ask-submit default-off", id: "question-ask-submit" %>
+	            <ul>
+
+		            <% @question.errors.full_messages.each do |message| %>
+		              
+		              <li><%= message %></li>
+
+		            <% end %>
+
+	            </ul>
+
+	        </div>
+
+        <% end %>
+
+    <%= f.text_area :body, placeholder: "Ask a Question", :rows => "2", autofocus: false, value: "What time is it?", class: "question-text" %><!-- animate a shrinking of this text switching to audience panel -->
+
+    <div class="question-form-panel" id="add-answer-panel">
+
+		<%= f.hidden_field :user_id, as: :integer, :label => false, :placeholder => current_user.id %>
+
+		<%= link_to_add_fields "+ Add Answers", f, :answers %>
+
+		<a class="question-form-continue">Continue</a>
 
 	</div>
+
+
+	<div class="question-form-panel" id="audience-select-panel">
+
+		<h2>Who Do You Want To Ask?</h2>
+	
+		<div class="question-option-line"><span><a id="question-binary-option-male" class="question-binary-option active left">Male</a><a id="question-binary-option-female" class="question-binary-option right inactive">Female</a></span></div>
+
+			<div class="question-option-line">
+				
+				<span>
+
+					<a class="question-description-text">Age</a>
+
+					<select class="question-number-input">
+					  <option value="volvo">18</option>
+					  <option value="volvo">19</option>
+					  <option value="volvo">20</option>
+					  <option value="volvo">21</option>
+					</select>
+
+					<a class="question-description-text">to</a>
+
+					<select class="question-number-input">
+					  <option value="volvo">18</option>
+					  <option value="volvo">19</option>
+					  <option value="volvo">20</option>
+					  <option value="volvo">21</option>
+					</select>
+
+				</span>
+
+			</div>
+
+			<%= f.submit "Ask", class: "question-ask-submit", id: "question-ask-submit-button" %>
+
+		</div>
+
+	<%end%>
 
 </div>

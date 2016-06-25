@@ -15,3 +15,9 @@
 	<%= render partial: 'pages/home_no_user', locals: {source: @source} %>
 
 <% end %>
+
+<% if @question_show %>
+
+	<%= render partial: 'pages/question_show', locals:{source: @source, show_question: @question_show} %>
+
+<% end %>

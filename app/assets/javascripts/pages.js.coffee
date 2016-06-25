@@ -21,19 +21,38 @@ $(document).ready ->
 			radio_button_female = $(@).parent().parent().nextAll('#gender-radio-button-female')
 			radio_button_female.prop("checked", true)
 
-		$('form').on 'focusin', '#question_body', (event), ->
+		$('form').on 'click', '.question-form-continue', (event) ->
+			answerPanel = $(@).parent().parent().find('#add-answer-panel')
+			audiencePanel = $(@).parent().parent().find('#audience-select-panel')
+			questionHeader = $(@).parent().parent().find('.question-text')
+			questionHeader.addClass("small")
+			answerPanel.slideUp()
+			audiencePanel.slideDown()
+
+		$(".dismiss-question-show").click (event), ->
+			questionShowPanel = $(@).parent()
+			questionShowPanel.slideUp()
+
+		$('form').on 'click', '#question-ask-submit-button', (event) ->
+			answerPanel = $(@).parent().parent().find('#add-answer-panel')
+			audiencePanel = $(@).parent().parent().find('#audience-select-panel')
+			answerPanel.slideUp()
+			audiencePanel.slideDown()
+
+		$('form').on 'focusin', '#question-body', (event), ->
+			alert("roast")
 			question_ask_submit = $(@).parent().find('#question-ask-submit')
 			question_ask_submit.show()
 
-		$('form').on 'focusout', '#question_body', (event), ->
+		$('form').on 'focusout', '#question-body', (event), ->
 			questionText = $(@).val()
 			if questionText.length == 0
 				question_ask_submit = $(@).parent().find('#question-ask-submit')
 				question_ask_submit.hide()
 			end
 
-		$('form').on 'click', '#question-ask-submit', (event) ->
-			filterPage = $(@).parent().parent().find('.question-audience-filter')
+		$("#question-ask-submit").click (event), ->
+			filterPage = $(@).parent().find('.question-audience-filter')
 			filterPage.show()
 			event.preventDefault()
 
@@ -47,3 +66,4 @@ $(document).ready ->
 			regexp = new RegExp($(this).data('id'), 'g')
 			$(this).before($(this).data('fields').replace(regexp, time))
 			event.preventDefault()
+

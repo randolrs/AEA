@@ -1,40 +1,9 @@
 <div class="home-question-container">
 
-	<%= form_for(@question, :html => { :class => "home-question-form"}) do |f| %>
+        <input type="textarea" name="fname" class="question-text" id="question-body" placeholder="Ask a Question" rows="2">
 
-        <% if @question.errors.any? %>
-
-        	<div id="error_explanation">
-
-	            <h2><%= pluralize(@question.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-	            <ul>
-
-		            <% @question.errors.full_messages.each do |message| %>
-		              
-		              <li><%= message %></li>
-
-		            <% end %>
-
-	            </ul>
-
-	        </div>
-
-        <% end %>
-
-        <%# link_to_add_fields "+ Add Forecast", f, :earnings_predictions %><%= f.text_area :body, placeholder: "Ask a Question", :rows => "2", autofocus: false, class: "question-text" %>
-
-        <%= f.hidden_field :user_id, as: :integer, :label => false, :placeholder => current_user.id %>
-
-        <div class="question-ask-submit-container">
-
-        	<%= link_to_add_fields "+ Add Answers", f, :answers %>
-        	<%= f.submit "Ask", class: "question-ask-submit default-off", id: "question-ask-submit" %>
-
-        </div>
+        <a class="question-ask-submit" id="question-ask-submit">Ask</a>
 
         <%= render 'pages/question_audience_filter' %>
-
-	<% end %>
 
 </div>

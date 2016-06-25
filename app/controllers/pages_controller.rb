@@ -2,6 +2,11 @@ class PagesController < ApplicationController
 
 	def home
 
+		if params[:question_id]
+
+			@question_show = Question.find(params[:question_id])
+		end
+
 		if user_signed_in?
 
 			@user = current_user

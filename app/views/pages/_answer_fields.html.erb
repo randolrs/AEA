@@ -1,5 +1,5 @@
 <div class="question-answer-field">
-	<%= f.text_field :body %>
+	<%= f.text_field :body, class: "answer-field", autofocus: true %>
 	<%= f.hidden_field :_destroy %>
 	<%= link_to "remove", '#', class: "remove_fields" %>
 </div>
