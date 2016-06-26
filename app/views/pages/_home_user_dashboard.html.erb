@@ -25,7 +25,7 @@
 						<li>
 							<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
 							<br>
-							<a class="question-show-link-date">Oct 23, 2013</a>
+							<a class="question-show-link-date"><%= question.created_at.strftime("%b %d, %Y")%></a>
 
 						</li>
 
@@ -55,7 +55,7 @@
 					<li>
 						<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
 						<br>
-						<a class="question-show-link-date">Oct 23, 2013</a>
+						<a class="question-show-link-date"><%= question.created_at.strftime("%b %d, %Y")%></a>
 
 					</li>
 
