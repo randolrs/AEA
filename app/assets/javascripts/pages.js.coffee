@@ -35,6 +35,12 @@ $(document).ready ->
 			questionShowPanel.slideUp()
 			answersContainer.html("")
 
+		$(".return-to-dashboard").click (event), ->
+			questionShowPanel = $(@).parent().parent()
+			answersContainer = questionShowPanel.find('.answer-container')
+			questionShowPanel.slideUp()
+			answersContainer.html("")
+
 		$('form').on 'click', '#question-ask-submit-button', (event) ->
 			answerPanel = $(@).parent().parent().find('#add-answer-panel')
 			audiencePanel = $(@).parent().parent().find('#audience-select-panel')

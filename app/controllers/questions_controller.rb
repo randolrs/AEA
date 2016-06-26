@@ -74,7 +74,11 @@ class QuestionsController < ApplicationController
         notice = ""
         i = 0
 
-        answer_array = Array.new
+        answer_percentage_color_array = Array.new
+
+        answer_percentage_color_array = ["rgba(237,42,22,0.5)", "rgba(205,240,46,0.5)", "rgba(7,75,160,0.5)", "rgba(154,8,160,0.5)", "rgba(237,104,18,0.5)", "rgba(64,240,42,0.5)"]
+
+        i = 0
 
         @answers_html = ""
 
@@ -84,17 +88,18 @@ class QuestionsController < ApplicationController
 
           if total_responses_count_for_question > 0
 
-            answer_responses_percentage = ((answer.responses.count / total_responses_count_for_question) * 100).to_i.to_s + "%"
+            this_answer_response_percentage = ((answer.responses.count.to_f / total_responses_count_for_question.to_f) * 100).to_i.to_s + "%"
           
           else
 
-            answer_responses_percentage = "0%"
+            this_answer_response_percentage = "0%"
           end
 
-
-          this_answer_html = %q(<br><div class="question-answer-field"><a class= "answer-field" style="width:) +   " id=" + answer.id.to_s + %q("><span class="answer-field-body">) + answer.body + %q(</span><span class="answer-field-percentage">) + answer_responses_percentage + "</span></a></div>"
+          this_answer_html = %q(<br><div class="question-answer-field"><a class= "answer-responses-field" id=") + answer.id.to_s + %q("><span class ="answer-bar-percentage" style="width:) + this_answer_response_percentage + "; background: " + answer_percentage_color_array[i] + %q(;"></span><span class="answer-field-body">) + answer.body + %q(</span><span class="answer-field-percentage">) + this_answer_response_percentage + "</span></a></div>"
 
           @answers_html = @answers_html + this_answer_html
+
+          i = i + 1
 
         end
 
