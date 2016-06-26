@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :topics
+
   resources :answers
 
   resources :questions
+
+  resources :topics
 
   devise_for :users, :path_names => { :sign_up => "join", :sign_in => "login"}
   # The priority is based upon order of creation: first created -> highest priority.

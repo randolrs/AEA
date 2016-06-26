@@ -13,6 +13,8 @@ class PagesController < ApplicationController
 
 			@my_questions = Question.where(:user_id => @user.id)
 
+			@timeline_questions = @user.timeline_questions
+
 			@recommended_questions = Question.last(5)
 
 			if @user.next_question.nil?

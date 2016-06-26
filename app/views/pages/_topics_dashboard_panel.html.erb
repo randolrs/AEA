@@ -1,0 +1,28 @@
+<p class="content-column-header"><%= title %></p>
+
+<ul class="my-questions-list">
+	<% if topics.count > 0 %>
+
+		<% topics.each do |topic| %>
+
+			
+			<li class="question-show-link" id="<%=topic.id%>">
+				<a class="question-show-link"><%= topic.name%></a>
+				<br>
+				<a class="question-show-link-date">3 Recent Questions<%# topic.recent_questions%></a>
+				</a>
+			</li>
+			
+
+		<%end%>
+
+	<%else%>
+
+		<li>
+			
+			<a class="question-show-blank">Nothing to See Here Yet</a>
+
+		</li>
+	<%end%>
+
+</ul>

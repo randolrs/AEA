@@ -1,0 +1,27 @@
+<p class="content-column-header">My Questions</p>
+
+<ul class="my-questions-list">
+	
+	<% if my_questions.count > 0%>
+
+		<% my_questions.each do |question| %>
+
+			<li>
+				<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
+				<br>
+				<a class="question-show-link-date"><%= question.created_at.strftime("%b %d, %Y")%></a>
+
+			</li>
+
+		<%end%>
+
+	<%else%>
+
+		<li>
+			<a class="question-show-link" id="<%=question.id%>">You Have Not Yet Asked a Question</a>
+
+		</li>
+
+	<%end%>
+
+</ul>

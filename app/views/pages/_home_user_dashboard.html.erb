@@ -3,65 +3,23 @@
 	<div class ="content-container-float">
 
 		<div class="content-left">
-			<p class="content-column-header">Favorite Topics</p>
-			<ul class="favorite-topics-list">
-				<li>Fire</li>
-				<li>Water</li>
-				<li>Earth</li>
-				<li>Wind</li>
-			</ul>
+			
+			<%= render partial: 'pages/questions_dashboard_panel', locals: {title: "My Questions", questions: @my_questions} %>
+
 		</div>
 
 		<div class="content-center">
 
 			<%= render 'pages/home_question_form'%>
 
-			<p class="content-column-header">My Questions</p>
-			<ul class="my-questions-list">
-				<% if @my_questions.count > 0%>
-
-					<% @my_questions.each do |question| %>
-
-						<li>
-							<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
-							<br>
-							<a class="question-show-link-date"><%= question.created_at.strftime("%b %d, %Y")%></a>
-
-						</li>
-
-					<%end%>
-				<%else%>
-
-					<li>
-						<a class="question-show-link" id="<%=question.id%>">You Have Not Yet Asked a Question</a>
-
-					</li>
-
-				<%end%>
-
-			</ul>
-
+			<%= render partial: 'pages/questions_dashboard_panel', locals: {title: "Recommended for You", questions: @recommended_questions} %>
 
 		</div>
 
 		<div class="content-right">
 
-			<p class="content-column-header">Top Stories for You</p>
-			
-			<ul class="my-questions-list">
-			
-				<% @recommended_questions.each do |question| %>
+			<%= render partial: 'pages/questions_dashboard_panel', locals: {title: "My Questions", questions: @my_questions} %>
 
-					<li>
-						<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
-						<br>
-						<a class="question-show-link-date"><%= question.created_at.strftime("%b %d, %Y")%></a>
-
-					</li>
-
-				<%end%>
-
-			</ul>
 
 		</div>
 

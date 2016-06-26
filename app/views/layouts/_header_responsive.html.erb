@@ -38,6 +38,12 @@
 		   <% if user_signed_in? %>
 		   		<li class="right"><span><p class="header-logout"><%= link_to "Logout", destroy_user_session_path, class: "header-logout", method: :delete %></p><!-- <p class="header-home">Login</p> --></span></li>
 
+		   		<% if current_user.creater%>
+
+		   			<li class="right"><span><p class="header-logout"><%= link_to "Topics", topics_path, class: "header-logout" %></p><!-- <p class="header-home">Login</p> --></span></li>
+
+		   		<% end %>
+
 		   <%else%>
 
 			   <li class="right"><a href='<%=new_user_session_path%>'><span><p class="header-login">Login</p><!-- <p class="header-home">Login</p> --></span></a></li>

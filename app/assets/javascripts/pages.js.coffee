@@ -32,13 +32,13 @@ $(document).ready ->
 		$(".dismiss-question-show").click (event), ->
 			questionShowPanel = $(@).parent()
 			answersContainer = $(@).parent().find('.answer-container')
-			questionShowPanel.slideUp()
+			questionShowPanel.hide()
 			answersContainer.html("")
 
 		$(".return-to-dashboard").click (event), ->
 			questionShowPanel = $(@).parent().parent()
 			answersContainer = questionShowPanel.find('.answer-container')
-			questionShowPanel.slideUp()
+			questionShowPanel.hide()
 			answersContainer.html("")
 
 		$('form').on 'click', '#question-ask-submit-button', (event) ->
@@ -78,7 +78,7 @@ $(document).ready ->
 			$(this).before($(this).data('fields').replace(regexp, time))
 			event.preventDefault()
 
-		$(".question-show-link").click (event), ->
+		$("li.question-show-link").click (event), ->
 			returnQuestionDetails = $(@).parent().parent().parent().parent().parent().parent().find('.return-question-details')
 			answersContainer = returnQuestionDetails.find('.answer-container')
 			questionID = $(@).attr('id')

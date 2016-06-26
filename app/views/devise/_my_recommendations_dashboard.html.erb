@@ -1,0 +1,16 @@
+<p class="content-column-header">Recommended for You</p>
+
+<ul class="my-questions-list">
+
+	<% my_recommended_questions.each do |question| %>
+
+		<li>
+			<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
+			<br>
+			<a class="question-show-link-date"><%= question.created_at.strftime("%b %d, %Y")%></a>
+
+		</li>
+
+	<%end%>
+
+</ul>

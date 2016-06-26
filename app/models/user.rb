@@ -7,4 +7,11 @@ class User < ActiveRecord::Base
     has_many :questions
     has_many :question_responses
     has_many :responses
+
+    def timeline_questions
+
+    	@timeline_questions = Question.last(5).sort { |a,b| a.created_at <=> b.created_at }.reverse
+    	
+    	return @timeline_questions
+    end
 end

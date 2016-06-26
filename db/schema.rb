@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626023111) do
+ActiveRecord::Schema.define(version: 20160626190958) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 20160626023111) do
     t.datetime "updated_at"
   end
 
+  create_table "topics", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -63,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160626023111) do
     t.string   "gender"
     t.integer  "birth_year"
     t.datetime "next_question"
+    t.boolean  "creater"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
