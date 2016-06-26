@@ -145,6 +145,8 @@ class QuestionsController < ApplicationController
         respond_to do |format|
            
            if @response.save
+              current_user.update(:next_question => Time.now + 3600)
+
               format.js { render json: { :successful => true, :notice=> "Response Received"  } , content_type: 'text/json' }
            else
               format.js { render json: { :successful => false, :notice=> "Something Went Wrong"  } , content_type: 'text/json' }
