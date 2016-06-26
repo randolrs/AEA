@@ -11,6 +11,26 @@ class PagesController < ApplicationController
 
 			@user = current_user
 
+			if @user.next_question.nil?
+
+				five_minutes_from_now = Time.now + 3*60
+				@user.update(:next_question => five_minutes_from_now)
+
+			else
+
+				unless params[:question_id]
+
+					if Time.now > @user.next_question
+
+
+						@show_user_question = Question.last
+
+
+					end
+				end
+
+			end
+
 			if current_user.basic_profile
 
 				@question = Question.new

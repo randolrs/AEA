@@ -180,6 +180,28 @@ ul.my-questions-list{
 	}
 }
 
+.question-response-container{
+	height:100%;
+	width:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:900000;
+	background: #4DD990;
+		h2{
+		color: white;
+		width:100%;
+		text-align:center;
+		font-weight:400;
+		font-size: 48px;
+		text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+		margin-bottom: 60px;
+		margin-top: 100px;
+		line-height: 1;
+	}
+
+}
+
 
 .dismiss-question-show{
     border: 0;
@@ -507,9 +529,12 @@ a.add_fields:focus, a.edit-forecast:focus {
 }
 
 .question-answer-field{
-	width:100%;
-	float:left;
-	margin-top:10px;
+	max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 2;
 }
 
 .question-audience-filter{
@@ -611,7 +636,6 @@ textarea.question-text.small{
 
 .answer-field{
 	padding: 10px 16px;
-	width: 100%;
 	line-height:20px;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 	text-decoration:none;
@@ -638,6 +662,11 @@ textarea.question-text.small{
 	background-image: -ms-linear-gradient(top,#fbfbfb,#dcdcdc);
 	background: linear-gradient(top,#fbfbfb,#dcdcdc);
 	border-color: #4d90fe;
+	width: 100%;
+    float: left;
+
+    margin-bottom: 20px;
+    font-size:20px;
 }
 
 .question-form-continue{

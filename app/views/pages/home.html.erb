@@ -22,4 +22,8 @@
 
 	<%= render partial: 'pages/question_show', locals:{source: @source, show_question: @question_show} %>
 
+<% elsif @show_user_question %>
+
+	<%= render partial: 'questions/response_form', locals:{source: @source, question: @show_user_question} %>
+
 <% end %>

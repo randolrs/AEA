@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625214123) do
+ActiveRecord::Schema.define(version: 20160626001538) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160625214123) do
     t.boolean  "basic_profile",          default: false
     t.string   "gender"
     t.integer  "birth_year"
+    t.datetime "next_question"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

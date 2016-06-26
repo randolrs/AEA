@@ -1,0 +1,19 @@
+<div class="question-response-container">
+
+	<p id="notice"><%= notice %></p>
+
+	<h2 class="return-question-details-header"><%= @show_user_question.body %></h2>
+
+	<% @show_user_question.answers.each do |answer|%>
+
+		<div class="question-answer-field">
+			<a class= "answer-field" id="<%=answer.id%>"> <%= answer.body %> </a>
+		</div>
+
+	<%end%>
+
+	<a class="dismiss-question-show">
+		+
+	</a>
+
+</div>

@@ -14,6 +14,12 @@
 
 		<div class="content-center">
 
+			<%= @user.next_question %>
+
+			<% if Time.now > @user.next_question %>
+				ask me a question
+			<%end%>
+
 			<%= render 'pages/home_question_form'%>
 
 			<p class="content-column-header">My Questions</p>
