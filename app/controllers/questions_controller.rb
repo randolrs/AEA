@@ -70,25 +70,36 @@ class QuestionsController < ApplicationController
 
         @question = Question.find(params[:question_id])
         body = @question.body
-        answer_count = @question.answers.count
 
         notice = ""
         i = 0
 
         answer_array = Array.new
 
-        until i = @question.body do
-          answer_array << @question.answer[i+1] 
-          i = i + 1
+        @answers_html = ""
+
+        total_responses_count_for_question = Response.where(:question_id => @question.id).count
+
+        @question.answers.each do |answer|
+
+          if total_responses_count_for_question > 0
+
+            answer_responses_percentage = ((answer.responses.count / total_responses_count_for_question) * 100).to_i.to_s + "%"
+          
+          else
+
+            answer_responses_percentage = "0%"
+          end
+
+
+          this_answer_html = %q(<br><div class="question-answer-field"><a class= "answer-field" style="width:) +   " id=" + answer.id.to_s + %q("><span class="answer-field-body">) + answer.body + %q(</span><span class="answer-field-percentage">) + answer_responses_percentage + "</span></a></div>"
+
+          @answers_html = @answers_html + this_answer_html
+
         end
 
-        # data.answer_1_count
-        # data.answer_2_count
-        # data.answer_3_count
-        # data.answer_4_count
-
         respond_to do |format|
-              format.js { render json: { :body => @question.body, :notice=> notice  } , content_type: 'text/json' }
+              format.js { render json: { :body => @question.body, :notice=> notice, :answers_html => @answers_html, :answers_count => @question.answers.count} , content_type: 'text/json' }
         end
 
       else
@@ -107,6 +118,38 @@ class QuestionsController < ApplicationController
 
     end
 
+
+  end
+
+  def ajax_response
+
+    if user_signed_in?
+
+      if Question.exists?(id: params[:question_id]) && Answer.exists?(id: params[:answer_id])
+
+        @question = Question.find(params[:question_id])
+
+        @answer = Answer.find(params[:answer_id])
+
+        @response = Response.new
+
+        @response.update(:question_id => @question.id, :answer_id => @answer.id, :user_id =>current_user.id)
+
+        @response.save
+
+        respond_to do |format|
+           
+           if @response.save
+              format.js { render json: { :successful => true, :notice=> "Response Received"  } , content_type: 'text/json' }
+           else
+              format.js { render json: { :successful => false, :notice=> "Something Went Wrong"  } , content_type: 'text/json' }
+           end
+
+        end
+
+      end
+
+    end
 
   end
 

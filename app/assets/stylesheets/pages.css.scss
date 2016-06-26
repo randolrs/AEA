@@ -369,7 +369,7 @@ input.question-text{
     border: 1px solid rgba(77, 217, 144, 0.9);
     border-radius: 4px;
     box-shadow: 0 2px 6px #ddd;
-    background-color: rgba(77,217,144,0.6);
+    background-color: rgba(77,217,144,0.7);
     overflow: hidden;
     float: left;
     resize: none;
@@ -635,14 +635,14 @@ textarea.question-text.small{
 }
 
 .answer-field{
-	padding: 10px 16px;
+	padding: 15px 0px;
+    text-indent: 15px;
 	line-height:20px;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 	text-decoration:none;
-	font-size: 14px;
 	font-weight:500;
 	border-radius: 5px;
-	border: 1px solid rgba(0,0,0,0.15);
+	border: 2px solid rgba(0,0,0,0.15);
 	text-align:center;
 	position:relative;
 	border-color: #ccc;
@@ -666,8 +666,40 @@ textarea.question-text.small{
     float: left;
 
     margin-bottom: 20px;
-    font-size:20px;
+    font-size:30px;
 }
+
+.answer-field:hover{
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+	text-decoration:none;
+	background-color:#fff;
+	color:#fff;
+	text-shadow: none;
+	cursor:pointer;
+
+	background: #394de3;
+	background-image: -moz-linear-gradient(top,#394de3,#394de3);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#394de3),to(#394de3));
+	background-image: -webkit-linear-gradient(top,#394de3,#394de3);
+	background-image: -o-linear-gradient(top,#394de3,#394de3);
+	background-image: -ms-linear-gradient(top,#394de3,#394de3);
+	background: linear-gradient(top,#394de3,#394de3);
+
+    webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+
+
+}
+
+span.answer-field-body{
+	float:left;
+}
+
+span.answer-field-percentage{
+	float:right;
+	margin-right:15px;
+}
+
 
 .question-form-continue{
 	padding: 10px 16px;

@@ -14,28 +14,31 @@
 
 		<div class="content-center">
 
-			<%= @user.next_question %>
-
-			<% if Time.now > @user.next_question %>
-				ask me a question
-			<%end%>
-
 			<%= render 'pages/home_question_form'%>
 
 			<p class="content-column-header">My Questions</p>
 			<ul class="my-questions-list">
-				<% current_user.questions.each do |question| %>
+				<% if @my_questions.count > 0%>
+
+					<% @my_questions.each do |question| %>
+
+						<li>
+							<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
+							<br>
+							<a class="question-show-link-date">Oct 23, 2013</a>
+
+						</li>
+
+					<%end%>
+				<%else%>
 
 					<li>
-						<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
-						<br>
-						<a class="question-show-link-date">Oct 23, 2013</a>
+						<a class="question-show-link" id="<%=question.id%>">You Have Not Yet Asked a Question</a>
 
 					</li>
 
 				<%end%>
 
-				<li><a class="question-show-link" id="90">Test for error</a></li>
 			</ul>
 
 
@@ -46,37 +49,18 @@
 			<p class="content-column-header">Top Stories for You</p>
 			
 			<ul class="my-questions-list">
-				<%# current_user.questions.each do |question| %>
+			
+				<% @recommended_questions.each do |question| %>
 
-<!-- 					<li>
-						<a class="question-show-link" id="<%#question.id%>"><%# question.body%></a>
+					<li>
+						<a class="question-show-link" id="<%=question.id%>"><%= question.body%></a>
 						<br>
 						<a class="question-show-link-date">Oct 23, 2013</a>
 
-					</li> -->
+					</li>
 
-				<%#end%>
+				<%end%>
 
-				<li>
-					<a class="question-show-link" id="90">Do You Favor Brexit?</a>
-					<br>
-					<a class="question-show-link-date">Oct 23, 2013</a>
-				</li>
-				<li>
-					<a class="question-show-link" id="90">Where is the best place to get pizza in Montreal?</a>
-					<br>
-					<a class="question-show-link-date">Oct 23, 2013</a>
-				</li>
-				<li>
-					<a class="question-show-link" id="90">How do you feel about Turkey?</a>
-					<br>
-					<a class="question-show-link-date">Oct 23, 2013</a>
-				</li>
-				<li>
-					<a class="question-show-link" id="90">Do you own bitcoin?</a>
-					<br>
-					<a class="question-show-link-date">Oct 23, 2013</a>
-				</li>
 			</ul>
 
 		</div>

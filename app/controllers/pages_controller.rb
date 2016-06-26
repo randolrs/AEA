@@ -11,6 +11,10 @@ class PagesController < ApplicationController
 
 			@user = current_user
 
+			@my_questions = Question.where(:user_id => @user.id)
+
+			@recommended_questions = Question.last(5)
+
 			if @user.next_question.nil?
 
 				five_minutes_from_now = Time.now + 3*60
