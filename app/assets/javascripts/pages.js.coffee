@@ -50,7 +50,6 @@ ready = ->
 				audiencePanel.slideDown()
 
 			$('form').on 'focusin', '#question-body', (event), ->
-				alert("roast")
 				question_ask_submit = $(@).parent().find('#question-ask-submit')
 				question_ask_submit.show()
 
@@ -84,7 +83,6 @@ ready = ->
 				returnQuestionDetails = $(@).parent().parent().parent().parent().parent().parent().find('.return-question-details')
 				answersContainer = returnQuestionDetails.find('.answer-container')
 				questionID = $(@).attr('id')
-				alert(questionID)
 				$.ajax
 					url: "/questions/details/#{questionID}", format: 'js'
 					type: "GET"
@@ -96,8 +94,6 @@ ready = ->
 						else
 							questionBody = data.body
 							answersHTML = data.answers_html
-							alert(answersHTML)
-							alert(questionBody)
 							questionHeader = returnQuestionDetails.find('.return-question-details-header')
 							questionHeader.text(questionBody)
 							answersContainer.append(answersHTML)
@@ -109,7 +105,6 @@ ready = ->
 							answer_4_count = data.answer_4_count
 
 			$('a.answer-field').click (event) ->
-				alert('entry')
 				responsePanel = $(@).parent().parent()
 				questionID = responsePanel.attr('id')
 				answerID = $(@).attr('id')
@@ -117,12 +112,9 @@ ready = ->
 					url: "/question/response/#{questionID}/#{answerID}", format: 'js'
 					type: "GET"
 					success: (data) ->
-						alert("Made it this far")
 						if data.successful
-							alert("success")
 							responsePanel.slideUp()
 						else
-							alert("failure")
 							responsePanel.hide()
 
 $(document).ready(ready)
