@@ -11,7 +11,9 @@ class PagesController < ApplicationController
 
 			@user = current_user
 
-			@my_questions = Question.where(:user_id => @user.id)
+			@my_questions = Question.where(:user_id => @user.id).last(10).reverse
+
+			@my_topics = Topic.all
 
 			@timeline_questions = @user.timeline_questions
 
