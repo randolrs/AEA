@@ -52,7 +52,7 @@ a.question-show-link-date{
 	color:#999;
 }
 
-.question-show-blank{
+a.question-show-blank{
 	font-size:20px;
 	color:#999;
 	text-align:center;
@@ -81,14 +81,14 @@ ul.favorite-topics-list{
 	width: 100%;
 	padding: 0px;
 	
-	li {
+	li.question-show-link {
 		font-size: 20px;
 		padding:10px;
 		color:#666;
 		text-align: justify;
 	}
 
-	li:hover {
+	li.question-show-link:hover {
 		cursor:pointer;
 		background-color: rgba(252, 159, 50, 0.3);
     	border-radius: 2px;
@@ -128,18 +128,26 @@ ul.my-questions-list{
 	width:100%;
 	margin:0px;
 	
-	li {
+	li.question-show-link {
 		font-size: 20px;
 		padding:10px;
 		list-style-type:none;
 		text-align: justify;
 	}
 
-	li:hover{
+	li.question-show-link:hover{
 		cursor:pointer;
 		background-color: rgba(252, 159, 50, 0.3);
     	border-radius: 2px;
     	box-shadow: 0 2px 4px #ccc;
+	}
+
+	li.question-show-blank {
+		text-align: center;
+	}
+
+	li.question-show-blank:hover{
+		
 	}
 
 
