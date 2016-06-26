@@ -11,11 +11,12 @@
 <% unless @hide_menu %>
 
 	<%= render 'layouts/header_responsive' %>
-	
+
 <%end%>
 
 <div class="main-content">
 	<%= yield %>
+	<div class="ajax-loading"></div>
 </div>
 
 </body>

@@ -56,6 +56,7 @@ a.question-show-blank{
 	font-size:20px;
 	color:#999;
 	text-align:center;
+	font-weight:400;
 	width:100%;
 }
 
@@ -161,6 +162,21 @@ ul.my-questions-list{
 	left:0px;
 	z-index:900000;
 	background: #ddd;
+}
+
+.ajax-loading{
+	height:100%;
+	width:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:900000;
+	background-color: rgba(77,217,144,0.7);
+	display: none;
+	background-image: url("https://s3.amazonaws.com/projectaea/ajax-loader+(1).gif");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .return-question-details{

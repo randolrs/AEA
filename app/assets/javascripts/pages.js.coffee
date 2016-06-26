@@ -80,6 +80,8 @@ ready = ->
 				event.preventDefault()
 
 			$("li.question-show-link").click (event), ->
+				ajaxLoading = $('body').find('.ajax-loading')
+				ajaxLoading.show()
 				returnQuestionDetails = $(@).parent().parent().parent().parent().parent().parent().find('.return-question-details')
 				answersContainer = returnQuestionDetails.find('.answer-container')
 				questionID = $(@).attr('id')
@@ -98,6 +100,7 @@ ready = ->
 							questionHeader.text(questionBody)
 							answersContainer.append(answersHTML)
 							returnQuestionDetails.slideDown()
+							ajaxLoading.delay(500).hide(0)
 							numberOfAnswers = data.answer_count
 							answer_1_count = data.answer_1_count
 							answer_2_count = data.answer_2_count
